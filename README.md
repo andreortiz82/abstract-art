@@ -8,6 +8,29 @@ Python CLI for generating abstract PNG artwork with reproducible seeds.
 
 **Repo:** https://github.com/andreortiz82/abstract-art
 
+## Cursor agent skill
+
+This repo includes a [Cursor Agent Skill](https://cursor.com/docs/context/skills) so AI agents know how to run the generators, pick styles, and set canvas size.
+
+**Install (personal — works in any workspace):**
+
+```bash
+git clone https://github.com/andreortiz82/abstract-art.git
+cd abstract-art
+./scripts/install-skill.sh
+```
+
+Or manually:
+
+```bash
+mkdir -p ~/.cursor/skills
+cp -r .cursor/skills/abstract-art ~/.cursor/skills/
+```
+
+**Project skill:** open this repo as your workspace root — the skill at `.cursor/skills/abstract-art/SKILL.md` is picked up automatically.
+
+After installing, ask your agent things like *"Generate a 16:9 kaleidoscope cover image"*.
+
 ## Setup
 
 Requires **Python 3.10+** (3.12 recommended).
@@ -176,4 +199,5 @@ abstract_art/
     mosaic.py
 generate.py       # CLI entry point
 outputs/          # Generated PNGs (gitignored)
+.cursor/skills/   # Cursor agent skill (install with scripts/install-skill.sh)
 ```

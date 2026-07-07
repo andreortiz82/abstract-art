@@ -11,20 +11,44 @@ description: >-
 
 Generate seed-reproducible abstract PNGs with the [abstract-art](https://github.com/andreortiz82/abstract-art) CLI.
 
+## Installation
+
+### Clone the repo
+
+```bash
+git clone https://github.com/andreortiz82/abstract-art.git
+cd abstract-art
+python3.12 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+### Install the Cursor skill (pick one)
+
+**Personal skill** — available in every workspace:
+
+```bash
+mkdir -p ~/.cursor/skills
+cp -r .cursor/skills/abstract-art ~/.cursor/skills/
+```
+
+**Project skill** — already included when you open this repo as your workspace root (`.cursor/skills/abstract-art/`).
+
+Restart Cursor or start a new agent chat after installing.
+
 ## Tool location
 
-| Context | Path |
-| ------- | ---- |
-| CURSOR workspace | `projects/abstract-art/` |
-| Not cloned yet | `gh repo clone andreortiz82/abstract-art projects/abstract-art` |
+Set `REPO` to wherever you cloned the repo. All commands run from that directory.
+
+```bash
+export REPO=~/path/to/abstract-art   # adjust to your clone path
+cd "$REPO"
+source .venv/bin/activate
+```
 
 ## Workflow
 
-1. **Ensure environment** — Python 3.10+ (3.12 recommended):
-   ```bash
-   cd projects/abstract-art
-   source .venv/bin/activate || (python3.12 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt)
-   ```
+1. **Ensure environment** — Python 3.10+ (3.12 recommended); venv active, Pillow installed.
 
 2. **Pick a generator** — match user intent; see [generators.md](generators.md).
 
@@ -63,9 +87,10 @@ Default random rotation: `kaleidoscope`, `collage`, `mosaic` (not `spiral`).
 
 ## When working from another project
 
-Run from `projects/abstract-art/` and copy the PNG to the target project, or write directly:
+Run from the cloned repo and copy the PNG, or write directly to the target project:
 
 ```bash
+cd "$REPO"
 python generate.py kaleidoscope --seed 42 --ar 1:1 --size 1200 \
   --output /absolute/path/to/assets/cover.png
 ```
@@ -74,7 +99,7 @@ python generate.py kaleidoscope --seed 42 --ar 1:1 --size 1200 \
 
 - New generators: `abstract_art/generators/<name>.py` + subcommand in `generate.py`
 - Architecture and full flag tables: repo `README.md`
-- Reference images: `projects/abstract-art/references/`
+- Reference images: `references/`
 
 ## Constraints
 
