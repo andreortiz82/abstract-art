@@ -1,3 +1,7 @@
+<img width="200" height="200" alt="20260707-163726-480345" src="https://github.com/user-attachments/assets/08f9e326-d731-4aee-9073-ea1ec9ee0ed2" />
+<img width="200" height="200" alt="20260707-163726-432926" src="https://github.com/user-attachments/assets/96279865-56c1-448d-a72e-1ddc52ce6b35" />
+<img width="200" height="200" alt="20260707-163726-380023" src="https://github.com/user-attachments/assets/fb11d1cf-8860-4df7-906b-9b3e4a80bdc8" />
+
 # Abstract Art Generator
 
 Python CLI for generating abstract PNG artwork with reproducible seeds.
