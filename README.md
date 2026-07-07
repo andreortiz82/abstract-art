@@ -2,6 +2,8 @@
 
 Python CLI for generating abstract PNG artwork with reproducible seeds.
 
+**Repo:** https://github.com/andreortiz82/abstract-art
+
 ## Setup
 
 Requires **Python 3.10+** (3.12 recommended).
